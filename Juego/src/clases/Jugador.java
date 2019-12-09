@@ -13,7 +13,7 @@ public class Jugador extends ClasePadre {
 	private int yImagen;
 	private int anchoImagen;
 	private int altoImagen;
-	//private int puntuacion = 0;
+	
 	
 	
 	public Jugador(int x, int y, String indiceImagen, int velocidad, String animacionActual) {
@@ -30,7 +30,7 @@ public class Jugador extends ClasePadre {
 		this.animacionActual = animacionActual;
 	}
 
-		//Obtener las coordenas del fragmento de la imagen a pintar
+		
 		public void actualizarAnimacion(double t) {
 			Rectangle coordenadasActuales = this.animaciones.get(animacionActual).calcularFrame(t);
 			this.xImagen = (int)coordenadasActuales.getX();
@@ -65,8 +65,7 @@ public class Jugador extends ClasePadre {
 					this.x, this.y,
 					this.anchoImagen, this.altoImagen
 			);
-			//graficos.fillRect(this.x, this.y, this.anchoImagen, this.altoImagen);
-			//graficos.fillText("Puntuacion " + puntuacion, 0, 0);
+			
 		}
 		
 		public Rectangle obtenerRectangulo() {
