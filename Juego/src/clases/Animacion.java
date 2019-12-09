@@ -7,7 +7,7 @@ public class Animacion {
 	private Rectangle coordenadasImagenes[];
 	private int cantidadFrames;
 	private int frameActual =0;
-	private double duracion; //Duracion para cambiar entre cada fragmento de imagen
+	private double duracion; 
 	public Animacion(String nombreAnimacion, Rectangle[] coordenadasImagenes, double duracion) {
 		super();
 		this.nombreAnimacion = nombreAnimacion;
@@ -45,7 +45,7 @@ public class Animacion {
 		this.duracion = duracion;
 	}
 	
-	//Para poder animar el personaje el frameActual debe ser dinamico
+	
 	public Rectangle calcularFrame(double t) {
 		this.cantidadFrames = coordenadasImagenes.length;
 		this.frameActual = (int)((t % (cantidadFrames * duracion)) / duracion);
