@@ -4,8 +4,7 @@ import importar.Juego;
 import javafx.scene.canvas.GraphicsContext;
 
 public class Tile extends ClasePadre {
-    //private int invertir=1;
-    private int altoImagen;
+        private int altoImagen;
 	private int anchoImagen;
 	private int xImagen;
 	private int yImagen;
@@ -33,30 +32,7 @@ public class Tile extends ClasePadre {
 				this.xImagen = 664;
 				this.yImagen = 156;
 			break;
-			case 3:
-				this.altoImagen = 51;
-				this.anchoImagen = 52;
-				this.xImagen = 0;
-				this.yImagen = 102;
-			break;
-			case 4:
-				this.altoImagen = 51;
-				this.anchoImagen = 52;
-				this.xImagen = 119;
-				this.yImagen = 0;
-			break;
-			case 5:
-				this.altoImagen = 51;
-				this.anchoImagen = 52;
-				this.xImagen = 119;
-				this.yImagen = 51;
-			break;
-			case 6:
-				this.altoImagen = 51;
-				this.anchoImagen = 52;
-				this.xImagen = 119;
-				this.yImagen = 103;
-			break;
+			
 			
 		}
 		
