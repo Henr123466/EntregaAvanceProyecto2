@@ -123,7 +123,7 @@ public class Juego extends Application {
 							arriba=true;
 							break;
 						case "DOWN":
-							abajo=false;
+							abajo=true;
 							break;
 						
 					}
