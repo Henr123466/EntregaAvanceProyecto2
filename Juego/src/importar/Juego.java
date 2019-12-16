@@ -32,29 +32,52 @@ public class Juego extends Application {
  	 private Jugador jugador;
  	 public static HashMap<String, Image> imagenes;
  	 private ArrayList<Tile> tiles;
- 	 private Item item;
- 	 private Item item2; 
+ 	 private Item images;
+ 	 private Item images2;
+ 	 private Item images3;
+ 	 private Item images4;
+ 	 private Item images5;
+ 	 private Item images6;
  	 private int[][] mapa = {
-			{0,0,0,0,0,1,2,2,2},
-			{0,0,0,0,0,1,2,2,2},
-			{0,0,0,0,0,1,2,2,2},
-			{0,0,0,0,0,1,2,2,2},
-			{0,0,0,0,0,1,2,2,2},
-			{0,0,0,0,0,1,2,2,2},
-			{0,0,0,0,0,1,2,2,2},
-			{0,0,0,0,0,1,2,2,2},
-			{0,0,0,0,0,1,2,2,2},
-			{0,0,0,0,0,1,2,2,2},
-			{0,0,0,0,0,1,2,2,2},
-			{0,0,0,0,0,1,2,2,2},
-			{0,0,0,0,0,1,2,2,2},
-			{0,0,0,0,0,1,2,2,2},
-			{0,0,0,0,0,1,2,2,2},
-			{0,0,0,0,0,1,2,2,2},
-			{0,0,0,0,0,1,2,2,2},
-			{0,0,0,0,0,1,2,2,2},
-			{0,0,0,0,0,1,2,2,2},
-			{0,0,0,0,0,1,2,2,2}
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,0},
+			{0,0,0,0,0,0,0,0,0},
+			{0,0,0,0,0,0,0,0,0},
+			{0,0,0,0,0,0,0,0,0},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,0},
+			{0,0,0,0,0,0,0,0,0},
+			{0,0,0,0,0,0,0,0,0},
+			{0,0,0,0,0,0,0,0,0},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1},
+			{0,0,0,0,0,0,0,0,1}
 	};
 	public static void main(String[] args) {
               launch(args);
@@ -72,41 +95,50 @@ public class Juego extends Application {
 		cicloJuego();
 	}
     public void inicializarComponentes() {
-    	jugador = new Jugador(0,162,"jugador",10, "correr");
+    	jugador = new Jugador(20,320,"jugador",10, "correr");
     	root= new Group();
     	escena= new Scene(root,1000,500);
     	canvas= new Canvas(1000,500);
     	imagenes = new HashMap<String,Image>();
-    	item = new Item (100,200,0,0,"item");
-		item2 = new Item(200,200,0,0,"item");
+    	images = new Item (200,350,0,0,"item");
+		images2= new Item(300,350,0,0,"item");
+		images3= new Item(700,350,0,0,"item");
+		images4= new Item(800,350,0,0,"item");
+		images5= new Item(1100,350,0,0,"item");
+		images6= new Item(1200,350,0,0,"item");
     	cargarImagenes();
     	cargarTiles();
     	
     }
     public void cargarImagenes() {
-		imagenes.put("jugador", new Image("jugador.png"));
+		imagenes.put("jugador", new Image("juego2.png"));
 		imagenes.put("tilemap", new Image("mapa.png"));
 		imagenes.put("item", new Image("item.png"));
+		imagenes.put("fondo",new Image("fondo.jpg"));
 	}
    public void pintar() {
 
 	    graficos.setFill(Color.WHITE);
-		graficos.fillRect(0, 0, 1000, 500);
+		graficos.fillRect(0,0, 1000, 500);
 		graficos.setFill(Color.BLACK);
-		//graficos.fillText("Puntuacion: " + puntuacion, 10, 10);
+		graficos.drawImage(imagenes.get("fondo"),0,0);
+		//tiles1.pintar(graficos);
 	    jugador.pintar(graficos);
 	    	for (int i=0;i<tiles.size();i++)
 	    			tiles.get(i).pintar(graficos);
-	    item.pintar(graficos);
-		item2.pintar(graficos);
-	
+	    images.pintar(graficos);
+		images2.pintar(graficos);
+		images3.pintar(graficos);
+		images4.pintar(graficos);
+		images5.pintar(graficos);
+		images6.pintar(graficos);
 }
    public void cargarTiles() {
 		tiles = new ArrayList<Tile>();
 		for(int i=0; i<mapa.length; i++) {
 			for(int j=0; j<mapa[i].length; j++) {
 				if (mapa[i][j]!=0)
-					tiles.add(new Tile(mapa[i][j], i*51, j*52, "tilemap",0));
+					tiles.add(new Tile(mapa[i][j], i*51, j*52, "tilemap",5));
 			}
 		}
 	}
@@ -120,9 +152,11 @@ public class Juego extends Application {
 					switch (evento.getCode().toString()) {
 						case "RIGHT": 
 							derecha=true;
+							
 							break;
 						case "LEFT": 
 							izquierda=false;
+							
 						break;
 						case "UP":
 							arriba=true;
@@ -159,6 +193,8 @@ public class Juego extends Application {
 			
 		});
    }
+   
+	   
 		public void cicloJuego() {
 			long tiempoInicial = System.nanoTime();
 			AnimationTimer animationTimer = new AnimationTimer() {
@@ -175,8 +211,12 @@ public class Juego extends Application {
 		public void actualizar(double t){
 			jugador.mover();
 			jugador.actualizarAnimacion(t);
-			jugador.verificarColisiones(item);
-			jugador.verificarColisiones(item2);
+			jugador.verificarColisiones(images);
+			jugador.verificarColisiones(images2);
+			jugador.verificarColisiones(images3);
+			jugador.verificarColisiones(images4);
+			jugador.verificarColisiones(images5);
+			jugador.verificarColisiones(images6);
 	}
 }
 

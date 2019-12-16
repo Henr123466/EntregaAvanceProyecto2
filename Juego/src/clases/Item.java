@@ -8,8 +8,6 @@ public class Item {
      private boolean capturado;
      private int x;
  	 private int y;
-     //private int ancho;
- 	 //private int alto;
  	 private String indiceImagen;
 	
 	
@@ -17,14 +15,12 @@ public class Item {
 		super();
 		this.x = x;
 		this.y = y;
-		//this.ancho = ancho;
-		//this.alto = alto;
 		this.indiceImagen = indiceImagen;
 	}
 
 	public void pintar(GraphicsContext graficos) {
 		if (!capturado)
-			graficos.drawImage(Juego.imagenes.get(indiceImagen), this.x, this.y);
+			graficos.drawImage(Juego.imagenes.get(indiceImagen), this.x--, this.y);
 		
 	}
 	

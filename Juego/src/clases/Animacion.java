@@ -7,9 +7,8 @@ public class Animacion {
 	private Rectangle coordenadasImagenes[];
 	private int cantidadFrames;
 	private int frameActual =0;
-	private double duracion; 
+	private double duracion;
 	public Animacion(String nombreAnimacion, Rectangle[] coordenadasImagenes, double duracion) {
-		super();
 		this.nombreAnimacion = nombreAnimacion;
 		this.coordenadasImagenes = coordenadasImagenes;
 		this.duracion = duracion;
@@ -44,8 +43,6 @@ public class Animacion {
 	public void setDuracion(double duracion) {
 		this.duracion = duracion;
 	}
-	
-	
 	public Rectangle calcularFrame(double t) {
 		this.cantidadFrames = coordenadasImagenes.length;
 		this.frameActual = (int)((t % (cantidadFrames * duracion)) / duracion);

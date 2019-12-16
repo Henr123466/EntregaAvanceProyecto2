@@ -14,7 +14,7 @@ public class Jugador extends ClasePadre {
 	private int anchoImagen;
 	private int altoImagen;
 	private int puntuacion= 0;
-	
+	public static boolean moverse=false;
 	
 	public Jugador(int x, int y, String indiceImagen, int velocidad, String animacionActual) {
 		super(x, y, indiceImagen, velocidad);
@@ -40,20 +40,18 @@ public class Jugador extends ClasePadre {
 			
 		}
 		
+		
 		public void mover(){
+			
 			if (this.x>=1100)
 				this.x = -100;
-			if (Juego.derecha)
-				this.x+=velocidad;
-			
-			if (Juego.izquierda)
-				this.x-=velocidad;
-			
+			   
 			if (Juego.arriba)
-				this.y-=velocidad;
+				y--;
 			
 			if (Juego.abajo)
-				this.y+=velocidad;
+				y++;
+			
 		}
 		
 		
@@ -84,7 +82,7 @@ public class Jugador extends ClasePadre {
 					
 				};
 				
-				Animacion animacionCorrer = new Animacion("correr",coordenadasCorrer,0.05);
+				Animacion animacionCorrer = new Animacion("correr",coordenadasCorrer,0.10);
 				animaciones.put("correr",animacionCorrer);
 				
 				Rectangle coordenadasDescanso[] = {
@@ -99,11 +97,11 @@ public class Jugador extends ClasePadre {
 	
 		public void verificarColisiones(Item item) {
 			if (this.obtenerRectangulo().intersects(item.obtenerRectangulo().getBoundsInLocal())) {
-					System.out.println("Estan colisionando");
+					//System.out.println("Estan colisionando");
 					if (!item.isCapturado())
 						this.puntuacion++;
 					item.setCapturado(true);				
 			}
 		}
-	
+		
 }
